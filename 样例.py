@@ -16,7 +16,7 @@ def get_page_urls(page):
     # curl获取的格式
     headrs={}
     params = {}
-    response = requests.get(f'https://www.baidu.com/s?wd=site%3Awww.baidu.com&pn={page}', headers=headrs, params=params)
+    response = requests.get(url, headers=headrs, params=params)
     # 正则获取的格式
     urls = re.findall(r'"artUrl":"(.*?)"', response.text.replace('\\', ''))
     # jsonpath获取的格式
