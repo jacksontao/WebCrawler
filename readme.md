@@ -1,20 +1,9 @@
 # 工具文档
 
-## 概述
-本工具提供了一套完整的网页爬取解决方案，支持内容页识别、分页处理、链接提取、内容抓取及URL过滤等功能。主要特点包括：
-- 智能URL分类（内容页/列表页）
-- 分页处理支持直接解析和二分查找两种模式
-- 基于XPath和正则表达式的链接提取
-- 内容提取与清洗
-- 布隆过滤器实现URL去重
-- 自动重试机制和缓存支持
 
 ## 安装
 ```bash
-
-pip install WebCrawler-x==4.0
-
-pip install requests beautifulsoup4 loguru fake-useragent pybloom-live retrying gne htmldate lxml lxparse json_repair
+pip install WebCrawler-x== 5.2.2
 ```
 
 ## 1.使用
