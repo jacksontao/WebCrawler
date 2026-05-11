@@ -317,39 +317,7 @@ crawler = WebCrawler(base_url='https://example.com', use_filter=True)
 
 ---
 
-## 常见用法模板
 
-## 模板1：分页站点全量抓取
-
-```python
-from WebCrawler_x import get_page_info, get_links, run_in_threads, get_article
-
-url = 'https://gitee.com/explore/all?page=1'
-pages, total = get_page_info(url, page_param='page', mode='auto', page_mode='auto')
-
-all_links = []
-for p in pages:
-    all_links.extend(get_links(p, xpath='//a/@href', base_url='https://gitee.com', mode='s'))
-
-all_links = list(set(all_links))
-articles = run_in_threads(lambda u: get_article(u, mode='auto'), all_links[:100], max_workers=8)
-print('articles=', len(articles))
-```
-
-## 模板2：滚动站点抓取
-
-```python
-from WebCrawler_x import get_scrolling_page
-
-links = get_scrolling_page(
-    'https://news.qq.com/ch/tech',
-    row_xpath='//a/@href',
-    max_scrolls=8,
-    wait=1.2,
-    mode='auto'
-)
-print(len(links))
-```
 
 ---
 
